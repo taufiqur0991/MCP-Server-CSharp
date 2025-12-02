@@ -1,7 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 // Console.WriteLine("Hello, World!");
 using Microsoft.Extensions.Hosting;
-using ModelContextProtocol.Server;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,6 +14,4 @@ builder.Services
     .WithStdioServerTransport()
     .WithToolsFromAssembly();
 
-var host = builder.Build();
-await host.RunAsync();
-
+await builder.Build().RunAsync();
